@@ -52,7 +52,7 @@ void TimerSet (unsigned long M) {
 enum State1 {Start1, firstLed, secondLed, thirdLed} firstLeds;
 enum State2 {fourthLed, Off} secondLeds;
 enum State3 {Start3, Combine} combineLeds;
-enum State4 {speakerOff, On} speaker;
+enum State4 {speakerOff, On, Inc, Dec, Wait} speaker;
 unsigned char threeLedVal = 0x00;
 unsigned char blinkLedVal = 0x00;
 unsigned char speakerVal = 0x00;

@@ -7,7 +7,7 @@
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
  *
- *	Link Demo: https://youtu.be/1oq9AH62mdg
+ *	Link Demo: 
  */
 #include <avr/io.h>
 #include "io.h"
@@ -52,7 +52,7 @@ void TimerSet (unsigned long M) {
 enum State1 {Start1, firstLed, secondLed, thirdLed} firstLeds;
 enum State2 {fourthLed, Off} secondLeds;
 enum State3 {Start3, Combine} combineLeds;
-enum State4 {speakerOff, On} speaker;
+enum State4 {speakerOff, On, Inc, Dec, Wait} speaker;
 unsigned char threeLedVal = 0x00;
 unsigned char blinkLedVal = 0x00;
 unsigned char speakerVal = 0x00;
@@ -232,7 +232,7 @@ int main(void) {
             TickFourthLed();
             fourthLed_elapsedTime = 0;
         }
-        if (speaker_elapsedTime >=2){
+        if (speaker_elapsedTime >= 2){
             TickSpeaker();
             speaker_elapsedTime = 0;
         }
